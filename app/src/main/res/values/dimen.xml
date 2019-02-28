@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textNews">12sp</dimen>
+    <dimen name="titleNews">18sp</dimen>
+
+    <dimen name="dimen0">0dp</dimen>
+    <dimen name="dimen1">8dp</dimen>
+    <dimen name="dimen2">16dp</dimen>
+    <dimen name="heightCardView">132dp</dimen>
+
+    <dimen name="widthImageLabel">200dp</dimen>
+
+</resources>

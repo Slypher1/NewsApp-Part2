@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="news"
+            type="com.example.slypher.newsapp.News" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/dimen1"
+        android:paddingLeft="@dimen/dimen2"
+        android:paddingRight="@dimen/dimen2"
+        android:paddingBottom="@dimen/dimen1"
+        android:background="@color/colorBackground">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/heightCardView"
+            card_view:cardBackgroundColor="@color/colorCardViewBackground"
+            card_view:cardCornerRadius="@dimen/dimen1" >
+
+            <com.example.slypher.newsapp.RoundedImageView
+                android:id="@+id/backgroundImageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:alpha="0.4"
+                tools:src="@drawable/mcu" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen2" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen0"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/textNews"
+                        android:layout_width="@dimen/dimen0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@{@string/section + ` ` + news.sectionName}"
+                        android:textStyle="italic"
+                        tools:text="Section: Film" />
+
+                    <TextView
+                        style="@style/textNews"
+                        android:id="@+id/publicationDateTextView"
+                        android:layout_width="@dimen/dimen0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="@{news.publicationDate}"
+                        android:textStyle="bold|italic"
+                        tools:text="2018 - 04 - 25" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen0"
+                    android:layout_weight="4"
+                    android:gravity="center_vertical"
+                    android:text="@{news.title}"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:maxLines="3"
+                    android:textSize="@dimen/titleNews"
+                    android:textStyle="bold"
+                    tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at eros nec tellus porttitor interdum et sed nulla." />
+
+                <TextView
+                    style="@style/textNews"
+                    android:id="@+id/authorTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen0"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@{@string/author + ` ` + news.authorName}"
+                    android:textStyle="italic"
+                    tools:text="Author: Lorem ipsum" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+</layout>
